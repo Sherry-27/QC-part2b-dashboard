@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chapter 10 quality-control verification portfolio for Software Testing Part 2B">
+  <title>Chapter 10 Verification Bench</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23152b45'/%3E%3Cpath d='M7 23h18M9 20l4-5 4 2 6-8' fill='none' stroke='%23ff6242' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#calculator-form">Skip to verification bench</a>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">10</span><span>Process Control Study<small>Software Testing / Part 2B</small></span></a>
+    <nav class="app-nav" aria-label="Study sections">
+      <button class="app-nav-button active" data-page="calculator-page" type="button"><span>01</span>Verification bench</button>
+      <button class="app-nav-button" data-page="book-results-page" type="button"><span>02</span>Chapter notebook</button>
+    </nav>
+    <div class="top-actions"><button class="quiet-button" id="print-button">Print notebook</button><button class="accent-button" id="export-button">Save record</button></div>
+    <p class="sidebar-note">Statistics for Management<br>Chapter 10 / Exercises 10-40–10-59</p>
+  </header>
+
+  <main id="calculator-page" class="page-view calculator-page">
+    <header class="bench-heading">
+      <div class="chapter-stamp"><span>PART</span><strong>2B</strong></div>
+      <div><p class="eyebrow">Chapter 10 / numerical verification</p><h1>Quality Control<br><em>Verification Bench</em></h1><p class="lede">Rebuild a textbook answer from its given values, then audit it with a repeatable computer experiment.</p></div>
+      <dl class="bench-facts"><div><dt>Exercise records</dt><dd>22</dd></div><div><dt>Methods</dt><dd>06</dd></div><div><dt>Input policy</dt><dd>Book values</dd></div></dl>
+    </header>
+
+    <form id="calculator-form" class="bench-sheet">
+      <section class="bench-step selection-step">
+        <div class="step-number">01</div>
+        <div class="step-body">
+          <div class="step-heading"><div><p class="eyebrow">Study selection</p><h2>Open an exercise record</h2></div><p>Every record is tied to the printed data in Chapter 10.</p></div>
+          <div class="selection-grid">
+            <div class="bench-field"><label for="calc-kind">Analysis family</label><select id="calc-kind" name="kind"><option value="xbar">X-bar process limits</option><option value="range">Range variation limits</option><option value="p">Defective-rate limits</option><option value="acceptance">Lot acceptance risk</option><option value="pareto">Defect priority study</option><option value="proportion_test">Audit-rate test</option></select></div>
+            <div class="bench-field wide"><label for="calc-question">Exercise record</label><select id="calc-question"></select></div>
+            <div class="bench-field"><label for="calc-trials">Experiment size</label><select id="calc-trials"><option value="10000">10,000 runs</option><option value="50000">50,000 runs</option><option value="100000">100,000 runs</option></select></div>
+          </div>
+          <div class="record-ribbon"><span id="record-code">10-44</span><strong id="record-title">Global Bank mean chart</strong><span id="record-page">Textbook p. 512</span></div>
+        </div>
+      </section>
+
+      <section class="bench-step variables-step">
+        <div class="step-number">02</div>
+        <div class="step-body">
+          <div class="step-heading"><div><p class="eyebrow">Given values</p><h2>Inspect the numerical setup</h2></div><p>Values are prefilled from the selected exercise and may be corrected if your printed edition differs.</p></div>
+          <div id="calc-input-fields" class="calc-input-fields"></div>
+          <p id="calculator-error" class="calculator-error" role="alert" hidden></p>
+        </div>
+      </section>
+
+      <section class="bench-action">
+        <div><span>READY CHECK</span><strong>Formula → exact result → reference → experiment</strong></div>
+        <div class="calculator-actions"><button class="quiet-button" id="reset-button" type="button">Restore book values</button><button class="accent-button" id="calculate-button" type="submit">Run exercise audit</button></div>
+      </section>
+    </form>
+
+    <section class="calculator-result-shell" aria-label="Verification evidence">
+      <div id="calculator-empty" class="calculator-empty">
+        <div class="empty-index">03</div><div><p class="eyebrow">Evidence sheet</p><h2 id="ready-title">Exercise 10-44 is ready</h2><p id="ready-copy">Run the audit to generate control limits, a reference check, the working formula and a visual trace.</p></div>
+        <ol class="audit-route"><li><span>1</span>Recalculate from the stated values</li><li><span>2</span>Measure deviation from the reference</li><li><span>3</span>Run a seeded experiment where applicable</li></ol>
+      </div>
+      <div id="calculator-result" hidden>
+        <div class="calculator-result-toolbar"><span id="calculator-result-status">Evidence generated</span><button class="quiet-button" id="download-calculation" type="button">Download evidence (.json)</button></div>
+        <div id="calculator-result-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <main id="book-results-page" class="page-view" hidden>
+    <section class="intro">
+      <div><p class="eyebrow">Statistics for Management / Chapter 10</p><h1>Chapter notebook</h1><p class="lede">A question-by-question record of formulas, fixed textbook inputs, graphs, decisions and reproducible checks for Exercises 10-40 through 10-59.</p></div>
+      <div class="source-card"><span>Reading range</span><strong>Book pp. 511–514</strong><small>PDF pages 526–529</small></div>
+    </section>
+    <section class="summary-strip" aria-label="Assignment coverage">
+      <div><span>Question numbers</span><strong>20</strong><small>10-40 to 10-59</small></div>
+      <div><span>Numerical records</span><strong>11</strong><small>formula + plot</small></div>
+      <div><span>Written records</span><strong>9</strong><small>reasoned response</small></div>
+      <div><span>Dataset rule</span><strong>Fixed</strong><small>textbook values only</small></div>
+    </section>
+    <section class="workspace" id="workspace">
+      <aside class="question-panel">
+        <div class="panel-title"><div><p class="eyebrow">Record index</p><h2>10-40 — 10-59</h2></div><span id="visible-count">20</span></div>
+        <label class="search-label" for="question-search">Find a record</label>
+        <input id="question-search" type="search" placeholder="Number or topic">
+        <div class="filter-row"><button class="filter-chip active" data-filter="all">Complete set</button><button class="filter-chip" data-filter="numerical">Numerical</button><button class="filter-chip" data-filter="conceptual">Written</button></div>
+        <nav id="question-list" class="question-list" aria-label="Exercise navigation"></nav>
+      </aside>
+      <article class="exercise-view" aria-live="polite">
+        <header class="exercise-header"><div><div class="title-line"><span class="exercise-number" id="exercise-number"></span><span class="type-badge" id="type-badge"></span></div><h2 id="exercise-title"></h2><p id="exercise-prompt" class="exercise-prompt"></p></div><div class="page-reference"><span>Book page</span><strong id="book-page"></strong><small id="pdf-page"></small></div></header>
+        <section id="numerical-view">
+          <div class="metrics" id="metrics"></div>
+          <div class="visual-card"><div class="section-heading"><div><p class="eyebrow">Plotted evidence</p><h3 id="chart-title"></h3></div><span class="status-pill">Chapter data</span></div><div id="chart" class="chart" role="img"></div></div>
+          <div class="detail-grid"><section class="method-card"><p class="eyebrow">Working</p><h3>Formula path</h3><div id="formula" class="formula"></div><p id="method-note" class="muted"></p></section><section class="interpretation-card"><p class="eyebrow">Finding</p><h3>Reading the result</h3><p id="interpretation"></p></section></div>
+          <section class="table-card"><div class="section-heading compact"><div><p class="eyebrow">Calculation ledger</p><h3>Inputs and derived values</h3></div></div><div class="table-wrap"><table><thead id="result-head"></thead><tbody id="result-body"></tbody></table></div></section>
+          <section class="simulation-card" id="simulation-card"><div><p class="eyebrow">Seeded experiment</p><h3>Probability cross-check</h3><p id="simulation-description" class="muted"></p></div><div class="simulation-controls"><label>Runs<select id="trial-count"><option value="2000">2,000</option><option value="5000" selected>5,000</option><option value="10000">10,000</option></select></label><label>Seed<input id="seed-value" type="number" value="1040" min="1" max="999999"></label><button id="simulate-button" class="accent-button">Repeat experiment</button></div><div id="simulation-result" class="simulation-result">Start the seeded experiment to cross-check the exact probability.</div></section>
+        </section>
+        <section id="conceptual-view" hidden><div class="answer-card"><p class="eyebrow">Written finding</p><h3 id="answer-heading"></h3><div id="conceptual-answer"></div></div><div class="why-card"><p class="eyebrow">Method note</p><h3>Why a numerical experiment is not used</h3><p id="simulation-note"></p></div></section>
+      </article>
+    </section>
+    <section class="coverage"><div><p class="eyebrow">Record register</p><h2>Question coverage at a glance</h2></div><div id="coverage-grid" class="coverage-grid"></div></section>
+  </main>
+  <footer><span>Software Quality Engineering and Testing / Part 2B</span><span>Textbook inputs · deterministic working · seeded evidence</span></footer>
+  <script src="data.js"></script><script src="app.js"></script><script src="calculator.js"></script>
+</body>
+</html>
