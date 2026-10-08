@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chapter 10 quality-control simulations for Software Testing Part 2B">
+  <title>Quality Control Lab | Part 2B</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1f33'/%3E%3Cpath d='M6 23h20M8 20l5-5 4 3 7-9' fill='none' stroke='%2336d6c8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to exercise</a>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">QC</span><span>Quality Control Lab<small>Software Testing · Part 2B</small></span></a>
+    <div class="top-actions"><button class="quiet-button" id="print-button">Print report</button><button class="accent-button" id="export-button">Export result</button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">Statistics for Management · Chapter 10</p><h1>Testing quality-control results</h1><p class="lede">Exact calculations, fixed textbook data, reproducible simulation, and interpretation for Exercises 10-40 through 10-59.</p></div>
+      <div class="source-card"><span>Source range</span><strong>Book pp. 511–514</strong><small>PDF pages 526–529</small></div>
+    </section>
+    <section class="summary-strip" aria-label="Assignment coverage">
+      <div><span>Question numbers</span><strong>20</strong><small>10-40 to 10-59</small></div>
+      <div><span>Numerical</span><strong>11</strong><small>calculation + graph</small></div>
+      <div><span>Analytical</span><strong>9</strong><small>reasoned answers</small></div>
+      <div><span>Input policy</span><strong>Fixed</strong><small>no invented data</small></div>
+    </section>
+    <section class="workspace" id="workspace">
+      <aside class="question-panel">
+        <div class="panel-title"><div><p class="eyebrow">Exercise index</p><h2>10-40 — 10-59</h2></div><span id="visible-count">20</span></div>
+        <label class="search-label" for="question-search">Search exercises</label>
+        <input id="question-search" type="search" placeholder="e.g. Pareto or 10-52">
+        <div class="filter-row"><button class="filter-chip active" data-filter="all">All</button><button class="filter-chip" data-filter="numerical">Numerical</button><button class="filter-chip" data-filter="conceptual">Analytical</button></div>
+        <nav id="question-list" class="question-list" aria-label="Exercise navigation"></nav>
+      </aside>
+      <article class="exercise-view" aria-live="polite">
+        <header class="exercise-header">
+          <div><div class="title-line"><span class="exercise-number" id="exercise-number"></span><span class="type-badge" id="type-badge"></span></div><h2 id="exercise-title"></h2><p id="exercise-prompt" class="exercise-prompt"></p></div>
+          <div class="page-reference"><span>Book page</span><strong id="book-page"></strong><small id="pdf-page"></small></div>
+        </header>
+        <section id="numerical-view">
+          <div class="metrics" id="metrics"></div>
+          <div class="visual-card"><div class="section-heading"><div><p class="eyebrow">Visual verification</p><h3 id="chart-title"></h3></div><span class="status-pill">Fixed book data</span></div><div id="chart" class="chart" role="img"></div></div>
+          <div class="detail-grid">
+            <section class="method-card"><p class="eyebrow">Method</p><h3>Calculation route</h3><div id="formula" class="formula"></div><p id="method-note" class="muted"></p></section>
+            <section class="interpretation-card"><p class="eyebrow">Decision</p><h3>What the result means</h3><p id="interpretation"></p></section>
+          </div>
+          <section class="table-card"><div class="section-heading compact"><div><p class="eyebrow">Audit trail</p><h3>Inputs and calculated results</h3></div></div><div class="table-wrap"><table><thead id="result-head"></thead><tbody id="result-body"></tbody></table></div></section>
+          <section class="simulation-card" id="simulation-card">
+            <div><p class="eyebrow">Reproducible Monte Carlo</p><h3>Independent probability check</h3><p id="simulation-description" class="muted"></p></div>
+            <div class="simulation-controls"><label>Trials<select id="trial-count"><option value="2000">2,000</option><option value="5000" selected>5,000</option><option value="10000">10,000</option></select></label><label>Seed<input id="seed-value" type="number" value="1040" min="1" max="999999"></label><button id="simulate-button" class="accent-button">Run verification</button></div>
+            <div id="simulation-result" class="simulation-result">Run the seeded simulation to compare it with the exact result.</div>
+          </section>
+        </section>
+        <section id="conceptual-view" hidden>
+          <div class="answer-card"><p class="eyebrow">Analytical answer</p><h3 id="answer-heading"></h3><div id="conceptual-answer"></div></div>
+          <div class="why-card"><p class="eyebrow">Part 2B note</p><h3>Why there is no numerical simulation</h3><p id="simulation-note"></p></div>
+        </section>
+      </article>
+    </section>
+    <section class="coverage"><div><p class="eyebrow">Completeness check</p><h2>Every question number is accounted for</h2></div><div id="coverage-grid" class="coverage-grid"></div></section>
+  </main>
+  <footer><span>Prepared for Software Quality Engineering and Testing · Part 2B</span><span>Deterministic calculations · seeded simulation · print-ready</span></footer>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
